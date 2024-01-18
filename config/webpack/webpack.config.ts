@@ -20,12 +20,36 @@ export default (dirname: string): webpack.Configuration => ({
         ],
       },
       {
-        test: /\.s[ac]ss$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+        test: /\.svg$/i,
+        issuer: /\.[jt]sx?$/,
+        use: ["@svgr/webpack"],
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: "asset/resource",
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: "file-loader",
+          },
+        ],
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          // MiniCssExtractPlugin.loader,
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: {
+              modules: {
+                auto: (resPath: string) =>
+                  Boolean(resPath.includes(".module.")),
+                localIdentName: "[name]__[local]--[hash:base64:5]",
+              },
+            },
+          },
+          ,
+          "sass-loader",
+        ],
       },
     ],
   },

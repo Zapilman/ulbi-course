@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./Home.module.scss";
+import { RoutePath } from "shared/config/routes/routes.config";
 
 const Home = () => {
+  const asd = () => {};
   return (
     <div className={styles.home}>
-      <Link to="/friends">Friends</Link>
+      <Link to={`/${RoutePath.about}`}>Friends</Link>
       <p>Homeadasdasdasdasdas</p>
       {/* <Button>adsasdasdasd</Button> */}
     </div>

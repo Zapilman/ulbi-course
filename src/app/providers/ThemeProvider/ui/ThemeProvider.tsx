@@ -39,7 +39,7 @@ const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
         <title>My Title</title>
       </Helmet>
       <ThemeContext.Provider value={defaultProps}>
-        {themeLoaded ? children : "loading"}
+        {themeLoaded ? children : <button>loading</button>}
       </ThemeContext.Provider>
     </>
   );
