@@ -7,7 +7,7 @@ import classNames from "classnames";
 import { LangSwitcher } from "shared/ui/LangSwitcher";
 
 const Sidebar = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { toggleTheme } = useTheme();
   const [collapsed, setCollapsed] = useState(false);
 
   const toggleCollapsed = () => {

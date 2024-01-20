@@ -1,11 +1,4 @@
-import {
-  FC,
-  PropsWithChildren,
-  useCallback,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import { FC, PropsWithChildren, useEffect, useMemo, useState } from "react";
 import { ETheme, LOCAL_STORAGE_THEME_KEY } from "../types/Theme.types";
 import { ThemeContext } from "../lib/ThemeContext";
 import { Helmet } from "react-helmet";

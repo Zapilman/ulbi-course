@@ -5,8 +5,6 @@ import { Suspense } from "react";
 
 import "./styles/index.scss";
 import "shared/config/i18n/i18n.config";
-import { useTranslation } from "react-i18next";
-import i18next from "i18next";
 
 const App = () => {
   return (
