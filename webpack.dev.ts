@@ -16,7 +16,7 @@ export default merge(getCommonConfig(__dirname), {
   },
   plugins: [
     new ReactRefreshWebpackPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
+    // new webpack.HotModuleReplacementPlugin(),
     new webpack.ProgressPlugin(),
     new ForkTsCheckerWebpackPlugin({
       typescript: {

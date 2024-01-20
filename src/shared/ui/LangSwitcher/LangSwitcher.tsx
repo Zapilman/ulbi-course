@@ -11,7 +11,7 @@ const LangSwitcher = () => {
 
   return (
     <div>
-      <button onClick={toggleLang}>toggleLang</button>
+      <button onClick={toggleLang}>{t("toggle lang")}</button>
       <span>{t("Hello World")}</span>
     </div>
   );

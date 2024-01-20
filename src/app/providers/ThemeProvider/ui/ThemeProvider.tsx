@@ -2,8 +2,10 @@ import { FC, PropsWithChildren, useEffect, useMemo, useState } from "react";
 import { ETheme, LOCAL_STORAGE_THEME_KEY } from "../types/Theme.types";
 import { ThemeContext } from "../lib/ThemeContext";
 import { Helmet } from "react-helmet";
+import { useTranslation } from "react-i18next";
 
 const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
+  const { t } = useTranslation();
   const [theme, setTheme] = useState<ETheme>(
     (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as ETheme) || ETheme.DARK
   );
@@ -29,10 +31,10 @@ const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
     <>
       <Helmet>
         <html data-theme={theme} />
-        <title>My Title</title>
+        <title>{t("My Title")}</title>
       </Helmet>
       <ThemeContext.Provider value={defaultProps}>
-        {themeLoaded ? children : <button>loading</button>}
+        {themeLoaded ? children : <button>{t("loading")}</button>}
       </ThemeContext.Provider>
     </>
   );

@@ -5,9 +5,11 @@ import { ClearButton } from "shared/ui/ClearButton";
 import { useTheme } from "app/providers/ThemeProvider";
 import classNames from "classnames";
 import { LangSwitcher } from "shared/ui/LangSwitcher";
+import { useTranslation } from "react-i18next";
 
 const Sidebar = () => {
   const { toggleTheme } = useTheme();
+  const { t } = useTranslation();
   const [collapsed, setCollapsed] = useState(false);
 
   const toggleCollapsed = () => {
@@ -21,7 +23,7 @@ const Sidebar = () => {
         collapsed && styles.sidebarCollapsed
       )}
     >
-      <button onClick={toggleCollapsed}>toggle</button>
+      <button onClick={toggleCollapsed}>{t("toggle")}</button>
       <LangSwitcher />
       <ClearButton onClick={toggleTheme}>
         <ThemeIcon width={50} height={50} />
