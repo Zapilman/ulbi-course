@@ -1,9 +1,12 @@
-import { BrowserRouter, Router, RouterProvider } from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
 
-import "./styles/index.scss";
 import { routeConfig } from "shared/config/routes/routes.config";
 import { Suspense } from "react";
-import { Sidebar } from "widgets/Sidebar";
+
+import "./styles/index.scss";
+import "shared/config/i18n/i18n.config";
+import { useTranslation } from "react-i18next";
+import i18next from "i18next";
 
 const App = () => {
   return (

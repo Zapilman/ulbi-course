@@ -75,6 +75,7 @@ export default (dirname: string): webpack.Configuration => ({
     }),
     new webpack.DefinePlugin({
       __IS_MOBILE__: process.env.Platform === "mobile",
+      __IS_DEV__: process.env.NODE_ENV === "development",
     }),
   ],
 });

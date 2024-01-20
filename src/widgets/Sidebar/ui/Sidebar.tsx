@@ -4,6 +4,7 @@ import ThemeIcon from "shared/assets/icons/dark-theme.svg";
 import { ClearButton } from "shared/ui/ClearButton";
 import { useTheme } from "app/providers/ThemeProvider";
 import classNames from "classnames";
+import { LangSwitcher } from "shared/ui/LangSwitcher";
 
 const Sidebar = () => {
   const { theme, toggleTheme } = useTheme();
@@ -21,6 +22,7 @@ const Sidebar = () => {
       )}
     >
       <button onClick={toggleCollapsed}>toggle</button>
+      <LangSwitcher />
       <ClearButton onClick={toggleTheme}>
         <ThemeIcon width={50} height={50} />
       </ClearButton>
