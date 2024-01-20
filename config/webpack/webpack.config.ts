@@ -8,6 +8,22 @@ export default (dirname: string): webpack.Configuration => ({
   module: {
     rules: [
       {
+        test: /\.(js|jsx|tsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"],
+            plugins: [
+              [
+                "i18next-extract",
+                { locales: ["en", "ua"], keyAsDefaultValue: true },
+              ],
+            ],
+          },
+        },
+      },
+      {
         test: /\.tsx?$/,
         exclude: "/node_modules/",
         use: [
