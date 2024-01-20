@@ -1,5 +1,6 @@
 import { merge } from "webpack-merge";
 import webpack from "webpack";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import type { Configuration as DevServerConfiguration } from "webpack-dev-server";
 import getCommonConfig from "./config/webpack/webpack.config";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";

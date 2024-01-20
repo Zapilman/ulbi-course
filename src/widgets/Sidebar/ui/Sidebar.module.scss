@@ -3,13 +3,11 @@
   background-color: var(--side-bar-bg);
   width: var(--side-bar-width);
   position: relative;
-
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
   gap: 40px;
-
   transition: width 0.3s;
 }
 

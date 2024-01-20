@@ -1,4 +1,4 @@
-import webpack, { WebpackPluginInstance } from "webpack";
+import webpack from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import path from "path";
@@ -63,7 +63,6 @@ export default (dirname: string): webpack.Configuration => ({
               },
             },
           },
-          ,
           "sass-loader",
         ],
       },
