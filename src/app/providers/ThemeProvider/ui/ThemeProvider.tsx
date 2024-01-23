@@ -3,6 +3,7 @@ import { ETheme, LOCAL_STORAGE_THEME_KEY } from "../types/Theme.types";
 import { ThemeContext } from "../lib/ThemeContext";
 import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
+import { LoaderPage } from "widgets/LoaderPage";
 
 const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
   const { t } = useTranslation();
@@ -34,7 +35,7 @@ const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
         <title>{t("My Title")}</title>
       </Helmet>
       <ThemeContext.Provider value={defaultProps}>
-        {themeLoaded ? children : <button>{t("loading")}</button>}
+        {themeLoaded ? children : <LoaderPage />}
       </ThemeContext.Provider>
     </>
   );

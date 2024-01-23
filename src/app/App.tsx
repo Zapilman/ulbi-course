@@ -5,11 +5,12 @@ import { Suspense } from "react";
 
 import "./styles/index.scss";
 import "shared/config/i18n/i18n.config";
+import { LoaderPage } from "widgets/LoaderPage";
 
 const App = () => {
   return (
     <div className="app">
-      <Suspense fallback={"...fallback"}>
+      <Suspense fallback={<LoaderPage />}>
         <RouterProvider router={routeConfig} />
       </Suspense>
     </div>

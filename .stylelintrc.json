@@ -16,6 +16,7 @@
     "selector-no-qualifying-type": true,
     "selector-attribute-quotes": "always",
     "declaration-no-important": true,
-    "function-url-quotes": "always"
+    "function-url-quotes": "always",
+    "import-notation": "string"
   }
 }
