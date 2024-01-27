@@ -2,6 +2,7 @@ import webpack from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import path from "path";
+import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 
 export default (dirname: string): webpack.Configuration => ({
   entry: path.resolve(dirname, "./src", "index.tsx"),
@@ -51,8 +52,8 @@ export default (dirname: string): webpack.Configuration => ({
       {
         test: /\.s[ac]ss$/i,
         use: [
-          // MiniCssExtractPlugin.loader,
-          "style-loader",
+          MiniCssExtractPlugin.loader,
+          // "style-loader",
           {
             loader: "css-loader",
             options: {
@@ -87,6 +88,9 @@ export default (dirname: string): webpack.Configuration => ({
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(dirname, "public", "index.html"),
+    }),
+    new BundleAnalyzerPlugin({
+      openAnalyzer: Boolean(process.env.Analyze),
     }),
     new webpack.DefinePlugin({
       __IS_MOBILE__: process.env.Platform === "mobile",
